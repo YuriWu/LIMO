@@ -6,7 +6,7 @@ for i=1:length(required_measures)
     measure_name=required_measures{i};
     switch(measure_name)
         case 'hamming loss'
-            measure.hamming_loss=measure_hamming_loss(y_pred,y_true);
+            measure.hamming_loss=Hamming_loss(y_pred',y_true');
         case 'average precision'
             measure.average_precision=Average_precision(v_pred',y_true');
         case 'ranking loss'
