@@ -45,8 +45,8 @@ for didx=1:length(data_sets)
         measure.macro_F1=temp.macro_F1;
         
     %for micro-F1 and instance-F1, we need another thresholding
-        threshold_macro=limo_column_threshold(train_data*W,train_targets,'micro-F1');
-        [predict_labels,value]=limo_predict(W,test_data,threshold_macro,'column');
+        threshold_micro=limo_column_threshold(train_data*W,train_targets,'micro-F1');
+        [predict_labels,value]=limo_predict(W,test_data,threshold_micro,'column');
         temp=perform_measure(predict_labels,value,test_targets,{'micro-F1','instance-F1'});
         measure.micro_F1=temp.micro_F1;
         measure.instance_F1=temp.instance_F1;
